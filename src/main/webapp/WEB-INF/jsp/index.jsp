@@ -5,24 +5,28 @@
   Time: 17:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Home</title>
-    <link href="${pageContext.request.contextPath}/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="${pageContext.request.contextPath}/static/css/bootstrap.css" rel="stylesheet" type="text/css"
+          media="all"/>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
     <!--theme-style-->
-    <link href="${pageContext.request.contextPath}/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="${pageContext.request.contextPath}/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!--fonts-->
-    <link href='http://fonts.useso.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!--//fonts-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
 
 </head>
 <body>
@@ -32,24 +36,25 @@
 </div>
 <div class="header">
     <div class="logo">
-        <a href="${pageContext.request.contextPath}/index"><img src="${pageContext.request.contextPath}/static/images/logo.png" alt="" ></a>
+        <a href="${pageContext.request.contextPath}/index"><img
+                src="${pageContext.request.contextPath}/static/images/logo.png" alt=""></a>
     </div>
-    <div  class="header-top">
+    <div class="header-top">
         <div class="header-grid">
             <ul class="header-in">
-                <li ><a href="${pageContext.request.contextPath}/account">My Account   </a> </li>
-                <li>
-                    <select class="in-drop">
-                        <option value="Dollars" class="in-of">Dollars</option>
-                        <option value="Euro" class="in-of">Euro</option>
-                        <option value="Yen" class="in-of">Yen</option>
-                    </select>
-                </li>
+                <c:if test="${sessionScope.username   != null }">
+                    <li><a href="#"> 欢迎 ${sessionScope.username}   </a></li>
+                </c:if>
+                <c:if test="${sessionScope.username   == null }">
+                    <li><a href="${pageContext.request.contextPath}/account">${sessionScope.username} 登陆</a></li>
+                </c:if>
+
             </ul>
             <div class="search-box">
                 <div id="sb-search" class="sb-search">
                     <form>
-                        <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                        <input class="sb-search-input" placeholder="Enter your search term..." type="search"
+                               name="search" id="search">
                         <input class="sb-search-submit" type="submit" value="">
                         <span class="sb-icon-search"> </span>
                     </form>
@@ -59,50 +64,51 @@
             <script src="${pageContext.request.contextPath}/static/js/classie.js"></script>
             <script src="${pageContext.request.contextPath}/static/js/uisearch.js"></script>
             <script>
-                new UISearch( document.getElementById( 'sb-search' ) );
+                new UISearch(document.getElementById('sb-search'));
             </script>
             <!-- //search-scripts -->
             <div class="online">
-                <a href="${pageContext.request.contextPath}/single" >SHOP ONLINE</a>
+                <a href="${pageContext.request.contextPath}/single">在线商店</a>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
         <div class="header-bottom">
             <div class="h_menu4"><!-- start h_menu4 -->
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
-                    <li class="active"><a href="${pageContext.request.contextPath}/product">Running</a></li>
-                    <li><a href="${pageContext.request.contextPath}/product">Fitness</a></li>
-                    <li><a href="${pageContext.request.contextPath}/product">Tennis</a>
+                    <li class="active" style="margin-left: 12px"><a
+                            href="${pageContext.request.contextPath}/product">跑步</a></li>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">跑步用品</a></li>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">网球</a>
                     </li>
-                    <li><a href="${pageContext.request.contextPath}/product">Football</a></li>
-                    <li><a href="${pageContext.request.contextPath}/product">Golf</a></li>
-                    <li><a href="${pageContext.request.contextPath}/product">More <i> </i></a>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">足球</a></li>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">高尔夫球</a></li>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">更多 <i> </i></a>
                         <ul>
-                            <li><a href="${pageContext.request.contextPath}/contact">Contact</a></li>
-                            <li><a href="${pageContext.request.contextPath}/account">Account</a></li>
-                            <li><a href="${pageContext.request.contextPath}/register">Register</a></li>
+                            <li><a href="${pageContext.request.contextPath}/contact">联系我们</a></li>
+                            <li><a href="${pageContext.request.contextPath}/account">帐户</a></li>
+                            <li><a href="${pageContext.request.contextPath}/register">注册</a></li>
                         </ul>
                     </li>
                 </ul>
                 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/nav.js"></script>
             </div><!-- end h_menu4 -->
-            <ul class="header-bottom-in">
-                <li ><select class="drop">
-                    <option value="Dollars" class="in-of">Get Active</option>
-                    <option value="Euro" class="in-of">Get Active1</option>
-                    <option value="Yen" class="in-of">Get Active2</option>
-                </select> </li>
-                <li ><select class="drop">
-                    <option value="Dollars" class="in-of">Community</option>
-                    <option value="Euro" class="in-of">Community1</option>
-                    <option value="Yen" class="in-of">Community2</option>
-                </select></li>
-            </ul>
-            <div class="clearfix"> </div>
+            <%--<ul class="header-bottom-in">--%>
+            <%--<li ><select class="drop">--%>
+            <%--<option value="Dollars" class="in-of">Get Active</option>--%>
+            <%--<option value="Euro" class="in-of">Get Active1</option>--%>
+            <%--<option value="Yen" class="in-of">Get Active2</option>--%>
+            <%--</select> </li>--%>
+            <%--<li ><select class="drop">--%>
+            <%--<option value="Dollars" class="in-of">Community</option>--%>
+            <%--<option value="Euro" class="in-of">Community1</option>--%>
+            <%--<option value="Yen" class="in-of">Community2</option>--%>
+            <%--</select></li>--%>
+            <%--</ul>--%>
+            <div class="clearfix"></div>
         </div>
     </div>
-    <div class="clearfix"> </div>
+    <div class="clearfix"></div>
 </div>
 <!---->
 <div class="banner">
@@ -116,23 +122,24 @@
 			</div>
 		</span></div>
     </div>
-</div><span>
+</div>
+<span>
 <!---->
-<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 <div class="content">
 	<div class="sport-your">
 <!-- requried-jsfiles-for owl -->
-							<link href="${pageContext.request.contextPath}/static/css/owl.carousel.css" rel="stylesheet">
+							<link href="${pageContext.request.contextPath}/static/css/owl.carousel.css"
+                                  rel="stylesheet">
 							    <script src="${pageContext.request.contextPath}/static/js/owl.carousel.js"></script>
 							        <script>
-									    $(document).ready(function() {
+									    $(document).ready(function () {
                                             $("#owl-demo").owlCarousel({
-                                                items : 5,
-                                                lazyLoad : true,
-                                                autoPlay : true,
-                                                navigation : true,
-                                                navigationText :  true,
-                                                pagination : false,
+                                                items: 5,
+                                                lazyLoad: true,
+                                                autoPlay: true,
+                                                navigation: true,
+                                                navigationText: true,
+                                                pagination: false,
                                             });
                                         });
 									  </script>
@@ -149,7 +156,7 @@
 					<img class="img-responsive " src="${pageContext.request.contextPath}/static/images/pic.jpg" alt="">
 				<div class="run">
 					<i> </i>
-					<p>RUNNING</p>
+					<p>跑步</p>
 				</div>
 				</a>
 			</div>
@@ -158,7 +165,7 @@
 					<img class="img-responsive " src="${pageContext.request.contextPath}/static/images/pic1.jpg" alt="">
 				<div class="run">
 					<i class="foot-in"> </i>
-					<p>FOOTBALL</p>
+					<p>足球</p>
 				</div>
 				</a>
 			</div>
@@ -167,7 +174,7 @@
 					<img class="img-responsive " src="${pageContext.request.contextPath}/static/images/pic2.jpg" alt="">
 				<div class="run">
 				<i class="cycling"> </i>
-				<p>CYCLING</p>
+				<p>骑行</p>
 				</div>
 				</a>
 			</div>
@@ -176,7 +183,7 @@
 					<img class="img-responsive " src="${pageContext.request.contextPath}/static/images/pic3.jpg" alt="">
 				<div class="run">
 				<i class="fitness"> </i>
-				<p>FITNESS</p>
+				<p></p>
 				</div>
 				</a>
 			</div>
@@ -251,10 +258,17 @@
 		</div>
 	</div>
     <!--//sreen-gallery-cursual---->
+
+
+
+
 	<div class="content-grids">
+		<%--<div id="owl-demo" class="owl-carousel text-center">--%>
 
 	<div class="col-md-4 content-grid">
-		<a href="${pageContext.request.contextPath}/single" class="lot"><img class="img-responsive " src="${pageContext.request.contextPath}/static/images/sh.png" alt=""></a>
+		<a href="${pageContext.request.contextPath}/single" class="lot"><img class="img-responsive "
+                                                                             src="${pageContext.request.contextPath}/static/images/sh.png"
+                                                                             alt=""></a>
 		<div class="shoe">
 			<p>Nike 3.0 V4 Men Grey Royal
 			Blue with White</p>
@@ -265,7 +279,9 @@
 		<b class="plus-in">+</b>
 	</div>
 	<div class="col-md-4 content-grid">
-		<a href="${pageContext.request.contextPath}/single" class="lot"><img class="img-responsive " src="${pageContext.request.contextPath}/static/images/sh1.png" alt=""></a>
+		<a href="${pageContext.request.contextPath}/single" class="lot"><img class="img-responsive "
+                                                                             src="${pageContext.request.contextPath}/static/images/sh1.png"
+                                                                             alt=""></a>
 		<div class="shoe">
 			<p>Nike 3.0 V4 Men Grey RoyalBlue with White</p>
 			<label>$67.99</label>
@@ -275,29 +291,38 @@
 		<b class="plus-in">+</b>
 	</div>
 	<div class="col-md-4 content-grid">
-		<a href="${pageContext.request.contextPath}/single" class="lot"><img class="img-responsive " src="${pageContext.request.contextPath}/static/images/sh2.png" alt=""></a>
+		<a href="${pageContext.request.contextPath}/single" class="lot"><img class="img-responsive "
+                                                                             src="${pageContext.request.contextPath}/static/images/sh2.png"
+                                                                             alt=""></a>
 		<div class="shoe">
 			<p>Nike 3.0 V4 Men Grey RoyalBlue with White</p>
 			<label>$67.99</label>
 			<a href="${pageContext.request.contextPath}/single">find a store</a>
 		</div>
-
 		<div class="clearfix"> </div>
 		<b class="plus-in">+</b>
 	</div>
 
 	<div class="clearfix"> </div>
 	</div>
+
+
     <!---->
 	<div class="content-top">
 		<div class="col-md-4 top-content">
-			<a href="${pageContext.request.contextPath}/single"><img class="img-responsive " src="${pageContext.request.contextPath}/static/images/pi.jpg" alt=""></a>
+			<a href="${pageContext.request.contextPath}/single"><img class="img-responsive "
+                                                                     src="${pageContext.request.contextPath}/static/images/pi.jpg"
+                                                                     alt=""></a>
 		</div>
 		<div class="col-md-4 top-content">
-			<a href="${pageContext.request.contextPath}/single"><img class="img-responsive " src="${pageContext.request.contextPath}/static/images/pi1.jpg" alt=""></a>
+			<a href="${pageContext.request.contextPath}/single"><img class="img-responsive "
+                                                                     src="${pageContext.request.contextPath}/static/images/pi1.jpg"
+                                                                     alt=""></a>
 		</div>
 		<div class="col-md-4 top-content">
-			<a href="${pageContext.request.contextPath}/single"><img class="img-responsive " src="${pageContext.request.contextPath}/static/images/pi2.jpg" alt=""></a>
+			<a href="${pageContext.request.contextPath}/single"><img class="img-responsive "
+                                                                     src="${pageContext.request.contextPath}/static/images/pi2.jpg"
+                                                                     alt=""></a>
 		</div>
 
 		<div class="clearfix"> </div>
@@ -312,31 +337,34 @@
                                 speed: 500,
                                 namespace: "callbacks",
                                 pager: false,
-                                nav:true,
+                                nav: true,
                             });
                         });
 					</script>
 					<div class="slider">
-						<div class="callbacks_container">
 						  <ul class="rslides" id="slider">
 							<li>
 							  <img src="${pageContext.request.contextPath}/static/images/vi.jpg" alt="">
-
+  								<div class="london">
+						<h5>London Marathon 2013111111111111</h5>
+						<p>24/2013 - 6Mins</p>
+					  </div>
 							</li>
 							<li>
 							  <img src="${pageContext.request.contextPath}/static/images/v2.jpg" alt="">
-
+ 					<div class="london">
+						<h5>London Marathon 201322222222222</h5>
+						<p>24/2013 - 6Mins</p>
+					  </div>
 							</li>
 							<li>
 							  <img src="${pageContext.request.contextPath}/static/images/vi.jpg" alt="">
-
-							</li>
-						  </ul>
-					  </div>
-					  <div class="london">
-						<h5>London Marathon 2013</h5>
+								 <div class="london">
+						<h5>London Marathon 20133333333333333</h5>
 						<p>24/2013 - 6Mins</p>
 					  </div>
+							</li>
+						  </ul>
 					</div>
 
 		</div>
@@ -378,6 +406,7 @@
 					<div class="clearfix"> </div>
 				</div>
 			</div>
+
 			<a href="#" class="view">view all articles</a>
 		</div>
 	<div class="clearfix"> </div>
@@ -444,7 +473,8 @@
 				<h6>NRL: five things we learned this weekend</h6>
 				<p>In support of suburban games; Warriors rip</p>
 				<a href="${pageContext.request.contextPath}/register" class="sign">SIGN UP AND GET MORE</a>
-				<p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+				<p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.<a target="_blank"
+                                                                                                  href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
 			</div>
 
 		</div>

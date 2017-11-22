@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <html>
 <head>
     <title>Home</title>
@@ -45,14 +44,12 @@
     <div class="header-top">
         <div class="header-grid">
             <ul class="header-in">
-                <li><a href="${pageContext.request.contextPath}/account">My Account </a></li>
-                <li>
-                    <select class="in-drop">
-                        <option value="Dollars" class="in-of">Dollars</option>
-                        <option value="Euro" class="in-of">Euro</option>
-                        <option value="Yen" class="in-of">Yen</option>
-                    </select>
-                </li>
+                <c:if test="${sessionScope.username   != null }">
+                    <li ><a href="#">  欢迎 ${sessionScope.username}   </a> </li>
+                </c:if>
+                <c:if test="${sessionScope.username   == null }">
+                    <li ><a href="${pageContext.request.contextPath}/account">${sessionScope.username} 登陆</a> </li>
+                </c:if>
             </ul>
             <div class="search-box">
                 <div id="sb-search" class="sb-search">
@@ -66,7 +63,7 @@
             </div>
 
             <div class="online">
-                <a href="${pageContext.request.contextPath}/single">SHOP ONLINE</a>
+                <a href="${pageContext.request.contextPath}/single">在线商店</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -111,15 +108,17 @@
         <h2>Account</h2>
         <div class="account-pass">
             <div class="col-md-7 account-top">
-                <form>
-
+                <form action="${pageContext.request.contextPath}/login" method="post">
                     <div>
                         <span>Email</span>
-                        <input type="text">
+                        <input type="text" name="username">
                     </div>
                     <div>
                         <span>Password</span>
-                        <input type="password">
+                        <input type="password" name="password">
+                    </div>
+                    <div>
+                        <p>${mes.mes}</p>
                     </div>
                     <input type="submit" value="Login">
                 </form>
@@ -200,9 +199,7 @@
             <h6>NRL: five things we learned this weekend</h6>
             <p>In support of suburban games; Warriors rip</p>
             <a href="${pageContext.request.contextPath}/register" class="sign">SIGN UP AND GET MORE</a>
-            <p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.<a target="_blank"
-                                                                                              href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-                - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
+            <p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.
         </div>
 
     </div>

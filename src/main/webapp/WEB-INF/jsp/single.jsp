@@ -28,9 +28,6 @@
     function hideURLbar() {
         window.scrollTo(0, 1);
     } </script>
-    <!--fonts-->
-    <link href='http://fonts.useso.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!--//fonts-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/etalage.css">
     <script src="${pageContext.request.contextPath}/static/js/jquery.etalage.min.js"></script>
     <script>
