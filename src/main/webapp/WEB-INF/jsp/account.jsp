@@ -199,7 +199,6 @@
             <h6>NRL: five things we learned this weekend</h6>
             <p>In support of suburban games; Warriors rip</p>
             <a href="${pageContext.request.contextPath}/register" class="sign">SIGN UP AND GET MORE</a>
-            <p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.
         </div>
 
     </div>
