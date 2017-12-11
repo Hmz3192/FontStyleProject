@@ -37,14 +37,12 @@
     <div  class="header-top">
         <div class="header-grid">
             <ul class="header-in">
-                <li ><a href="${pageContext.request.contextPath}/account">My Account   </a> </li>
-                <li>
-                    <select class="in-drop">
-                        <option value="Dollars" class="in-of">Dollars</option>
-                        <option value="Euro" class="in-of">Euro</option>
-                        <option value="Yen" class="in-of">Yen</option>
-                    </select>
-                </li>
+                <c:if test="${sessionScope.username   != null }">
+                    <li><a href="#"> 欢迎 ${sessionScope.username}   </a></li>
+                </c:if>
+                <c:if test="${sessionScope.username   == null }">
+                    <li><a href="${pageContext.request.contextPath}/account">${sessionScope.username} Login</a></li>
+                </c:if>
             </ul>
             <div class="search-box">
                 <div id="sb-search" class="sb-search">
@@ -85,18 +83,7 @@
                     </li>
                 </ul>
             </div><!-- end h_menu4 -->
-            <ul class="header-bottom-in">
-                <li ><select class="drop">
-                    <option value="Dollars" class="in-of">Get Active</option>
-                    <option value="Euro" class="in-of">Get Active1</option>
-                    <option value="Yen" class="in-of">Get Active2</option>
-                </select> </li>
-                <li ><select class="drop">
-                    <option value="Dollars" class="in-of">Community</option>
-                    <option value="Euro" class="in-of">Community1</option>
-                    <option value="Yen" class="in-of">Community2</option>
-                </select></li>
-            </ul>
+
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -108,7 +95,7 @@
         <h2>Contact</h2>
         <div class="col-md-6 map">
             <h3>Our Location</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37494223.23909492!2d103!3d55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453c569a896724fb%3A0x1409fdf86611f613!2sRussia!5e0!3m2!1sen!2sin!4v1415776049771"></iframe>
+            <img src="${pageContext.request.contextPath}/static/images/timg.jpg" alt="">
             <div class="address">
                 <h4>Address</h4>
                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p>

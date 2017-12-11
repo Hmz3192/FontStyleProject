@@ -18,6 +18,10 @@
     <!--theme-style-->
     <link href="${pageContext.request.contextPath}/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!--//theme-style-->
+
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script type="application/x-javascript"> addEventListener("load", function () {
@@ -46,7 +50,7 @@
                     <li><a href="#"> 欢迎 ${sessionScope.username}   </a></li>
                 </c:if>
                 <c:if test="${sessionScope.username   == null }">
-                    <li><a href="${pageContext.request.contextPath}/account">${sessionScope.username} 登陆</a></li>
+                    <li><a href="${pageContext.request.contextPath}/account">${sessionScope.username} Login</a></li>
                 </c:if>
 
             </ul>
@@ -68,7 +72,7 @@
             </script>
             <!-- //search-scripts -->
             <div class="online">
-                <a href="${pageContext.request.contextPath}/single">在线商店</a>
+                <a href="${pageContext.request.contextPath}/single">SHOP ONLINE</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -77,17 +81,17 @@
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
                     <li class="active" style="margin-left: 12px"><a
-                            href="${pageContext.request.contextPath}/product">跑步</a></li>
-                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">跑步用品</a></li>
-                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">网球</a>
+                            href="${pageContext.request.contextPath}/product">Running</a></li>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">Fitness</a></li>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">Tennis</a>
                     </li>
-                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">足球</a></li>
-                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">高尔夫球</a></li>
-                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">更多 <i> </i></a>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">Football</a></li>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">Golf</a></li>
+                    <li style="margin-left: 12px"><a href="${pageContext.request.contextPath}/product">More <i> </i></a>
                         <ul>
-                            <li><a href="${pageContext.request.contextPath}/contact">联系我们</a></li>
-                            <li><a href="${pageContext.request.contextPath}/account">帐户</a></li>
-                            <li><a href="${pageContext.request.contextPath}/register">注册</a></li>
+                            <li><a href="${pageContext.request.contextPath}/contact">Contact</a></li>
+                            <li><a href="${pageContext.request.contextPath}/account">Account</a></li>
+                            <li><a href="${pageContext.request.contextPath}/register">Register</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -111,16 +115,64 @@
     <div class="clearfix"></div>
 </div>
 <!---->
-<div class="banner">
+<%--<div class="banner">
     <div class="container">
         <div class="banner-matter">
-            <h1>Get active get running<span>push your limits</span></h1><span>
+            &lt;%&ndash;<h1>Get active get running<span>push your limits</span></h1><span>
 			<div class="out">
 				<a href="${pageContext.request.contextPath}/single" class="find">FIND OUT MORE </a>
 				<a href="${pageContext.request.contextPath}/single" class="shop">SHOP</a>
 				<div class="clearfix"> </div>
-			</div>
+			</div>&ndash;%&gt;
 		</span></div>
+    </div>
+</div>--%>
+
+<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            	<div class="banner">
+             	   <div class="container">
+             	       <div class="banner-matter">
+            	            &lt;%&ndash;<h1>Get active get running<span>push your limits</span></h1><span>
+				<div class="out">
+					<a href="${pageContext.request.contextPath}/single" class="find">FIND OUT MORE </a>
+					<a href="${pageContext.request.contextPath}/single" class="shop">SHOP</a>
+					<div class="clearfix"> </div>
+				</div>&ndash;%&gt;
+						</span></div>
+       	         </div>
+       	     </div>
+        </div>
+        <div class="item">
+				<div class="banner">
+					<div class="container">
+						<div class="banner-matter">
+							&lt;%&ndash;<h1>Get active get running<span>push your limits</span></h1><span>
+				<div class="out">
+					<a href="${pageContext.request.contextPath}/single" class="find">FIND OUT MORE </a>
+					<a href="${pageContext.request.contextPath}/single" class="shop">SHOP</a>
+					<div class="clearfix"> </div>
+				</div>&ndash;%&gt;
+			</span></div>
+					</div>
+				</div>
+     	   </div>
+        <div class="item">
+				<div class="banner">
+					<div class="container">
+						<div class="banner-matter">
+								&lt;%&ndash;<h1>Get active get running<span>push your limits</span></h1><span>
+				<div class="out">
+					<a href="${pageContext.request.contextPath}/single" class="find">FIND OUT MORE </a>
+					<a href="${pageContext.request.contextPath}/single" class="shop">SHOP</a>
+					<div class="clearfix"> </div>
+				</div>&ndash;%&gt;
+					</span></div>
+						</div>
+				</div>
+        </div>
     </div>
 </div>
 <span>
@@ -346,21 +398,21 @@
 							<li>
 							  <img src="${pageContext.request.contextPath}/static/images/vi.jpg" alt="">
   								<div class="london">
-						<h5>London Marathon 2013111111111111</h5>
+						<h5>London Marathon 2013</h5>
 						<p>24/2013 - 6Mins</p>
 					  </div>
 							</li>
 							<li>
 							  <img src="${pageContext.request.contextPath}/static/images/v2.jpg" alt="">
  					<div class="london">
-						<h5>London Marathon 201322222222222</h5>
+						<h5>London Marathon 2013</h5>
 						<p>24/2013 - 6Mins</p>
 					  </div>
 							</li>
 							<li>
 							  <img src="${pageContext.request.contextPath}/static/images/vi.jpg" alt="">
 								 <div class="london">
-						<h5>London Marathon 20133333333333333</h5>
+						<h5>London Marathon 2013</h5>
 						<p>24/2013 - 6Mins</p>
 					  </div>
 							</li>
@@ -478,5 +530,14 @@
 		</div>
 		<div class="clearfix"> </div>
 	</div>
-</span></body>
+</span>
+
+<script>
+    $(function () {
+        $("#myCarousel").carousel({interval: 4000});
+    });
+
+
+</script>
+</body>
 </html>

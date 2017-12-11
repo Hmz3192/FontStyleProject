@@ -61,14 +61,12 @@
     <div class="header-top">
         <div class="header-grid">
             <ul class="header-in">
-                <li><a href="${pageContext.request.contextPath}/account">My Account </a></li>
-                <li>
-                    <select class="in-drop">
-                        <option value="Dollars" class="in-of">Dollars</option>
-                        <option value="Euro" class="in-of">Euro</option>
-                        <option value="Yen" class="in-of">Yen</option>
-                    </select>
-                </li>
+                <c:if test="${sessionScope.username   != null }">
+                    <li><a href="#"> 欢迎 ${sessionScope.username}   </a></li>
+                </c:if>
+                <c:if test="${sessionScope.username   == null }">
+                    <li><a href="${pageContext.request.contextPath}/account">${sessionScope.username} Login</a></li>
+                </c:if>
             </ul>
             <div class="search-box">
                 <div id="sb-search" class="sb-search">
@@ -111,18 +109,7 @@
                 </ul>
                 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/nav.js"></script>
             </div><!-- end h_menu4 -->
-            <ul class="header-bottom-in">
-                <li><select class="drop">
-                    <option value="Dollars" class="in-of">Get Active</option>
-                    <option value="Euro" class="in-of">Get Active1</option>
-                    <option value="Yen" class="in-of">Get Active2</option>
-                </select></li>
-                <li><select class="drop">
-                    <option value="Dollars" class="in-of">Community</option>
-                    <option value="Euro" class="in-of">Community1</option>
-                    <option value="Yen" class="in-of">Community2</option>
-                </select></li>
-            </ul>
+
             <div class="clearfix"></div>
         </div>
     </div>
