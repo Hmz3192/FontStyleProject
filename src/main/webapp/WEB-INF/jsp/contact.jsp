@@ -136,40 +136,32 @@
 <!--footer-->
 <div class="footer">
     <div class="col-md-3 footer-left">
-        <h4>Sports</h4>
+        <h4 >Sports</h4>
         <div class="run-top">
             <ul class="run-grid">
-                <li><a href="#">RUNNING</a></li>
-                <li><a href="#">CYCLING</a></li>
-                <li><a href="#">TRIATHLON</a></li>
-                <li><a href="#">FITNESS</a></li>
-                <li><a href="#">TENNIS</a></li>
-                <li><a href="#">MORE SPORTS</a></li>
+                <li><a href="${pageContext.request.contextPath}/product">RUNNING</a></li>
+                <li><a href="${pageContext.request.contextPath}/product">CYCLING</a></li>
+                <li><a href="${pageContext.request.contextPath}/product">TRIATHLON</a></li>
+                <li><a href="${pageContext.request.contextPath}/product">FITNESS</a></li>
+                <li><a href="${pageContext.request.contextPath}/product">TENNIS</a></li>
+                <li><a href="${pageContext.request.contextPath}/product">MORE SPORTS</a></li>
             </ul>
-            <ul class="run-grid">
-                <li><a href="#">STYLE</a></li>
-                <li><a href="#">SPECIAL</a></li>
-                <li><a href="#">BRAND EVENTS</a></li>
-            </ul>
+
             <div class="clearfix"> </div>
         </div>
     </div>
     <div class="col-md-3 footer-left left-footer">
-        <h4>Latest</h4>
+        <h4>CONTACT US</h4>
         <div class="run-top top-run">
             <ul class="run-grid">
-                <li><a href="#">News & Events</a></li>
+                <li><a href="#">About Us</a></li>
                 <li><a href="#">Community</a></li>
                 <li><a href="#">Videos</a></li>
-                <li><a href="#">Shopping</a></li>
+                <li><a href="${pageContext.request.contextPath}/single">Shopping</a></li>
                 <li><a href="#">Sponsorships</a></li>
                 <li><a href="#">more sports</a></li>
             </ul>
-            <ul class="run-grid">
-                <li><a href="#">Clubs and Training</a></li>
-                <li><a href="#">Event Map</a></li>
-                <li><a href="#">Challange the world</a></li>
-            </ul>
+
             <div class="clearfix"> </div>
         </div>
     </div>
